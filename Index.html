@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Example</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+    />
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+        header {
+            display: flex;
+            justify-content: space-between;
+         
+            padding: 15px 30px;
+            background-color:white;
+            border-bottom: 1px solid #ddd;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            cursor:pointer;
+            margin-left: -15%;
+            margin-block: 1%;
+        
+            
+        }
+        .logo:hover{
+            color: #0e0ea6;
+            
+        }
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+        .nav-links input[type="text"] {
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        .button {
+            padding: 10px 20px;
+            background-color: #0e0ea6;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+        .dropdown   a:hover{
+            color: #0e0ea6;
+        }
+        .spam:hover{
+            color: #0e0ea6;
+        }
+        .dropdown {
+            position: relative;
+            display: inline-block;
+            cursor: pointer;
+            
+        }
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 150px;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+            z-index: 1;
+            border-radius: 5px;
+           
+        }
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            border-bottom: 1px solid #ddd;
+        }
+        .dropdown-content a:hover {
+            background-color: #f1f1f1;
+        }
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+        .sidebar {
+            position: fixed;
+            left: 0;
+            top: 89px;
+            padding: 10px;
+            background-color: #fff;
+           
+            
+        }
+        .sidebar a {
+            display: block;
+            margin-bottom: 10px;
+            color: black;
+            text-decoration: none;
+            font-size: 18px;
+            text-align: center;
+            padding: 8px;
+            border-radius: 50%;
+            transition: background-color 0.3s;
+        }
+        .sidebar a:hover {
+            background-color: #f0f0f0;
+        }
+        .main-content {
+            margin-left: 60px;
+            padding: 20px 30px;
+        }
+        h1 {
+            font-size: 36px;
+            margin-bottom: 10px;
+        }
+        .author-info {
+            color: gray;
+            margin-bottom: 20px;
+            font-size: 14px;
+        }
+
+        /* footer */
+*{
+  
+  list-style: none;
+ }     
+    
+ 
+ .containerr3{
+   width: 100%;
+   max-width: 1000px;
+   margin: 0 auto;
+   display: block;
+ }
+ .footer{
+   background-color:aliceblue;
+   padding: 80px 0;
+ }
+ .footer-row{
+   display: flex;
+   flex-wrap: wrap;
+ }
+ 
+ .footer-links{
+   width: 25%;
+   padding: 0 15px;
+ }
+ .footer-links h4{
+   font-size: 20px;
+   color: black;
+   margin-bottom: 25px;/*ALEJA EL TITULO DEL TEXTO*/
+  
+   display: inline-block;
+ }
+ .footer-links ul li a {
+   font-size: 18px;
+   text-decoration: none;
+   color: black;
+   display: block;
+   margin-bottom: 15px;
+   transition: all .03s ease;
+   margin-left: -20%;
+ }
+ .footer-links ul li a:hover{
+   color: #0e0ea6;
+   padding: 1px;
+ }
+ /**/
+ /**/
+aside{
+	width: 20%;
+	padding-left: 15px;
+	margin-left: 15px;
+	float:right;
+	top:auto;
+	
+}
+.h22	{
+	color:black;
+	font-size: 30px;
+}
+.hh{
+	color:greenyellow;
+	font-size: px;
+}
+.vdio{
+	width:85%;
+	height:50%;
+}
+
+/**/
+
+/**/
+.carrusel {
+    position: relative;
+    width: 99vw; /* Cambiado a 100vw para ocupar todo el ancho de la ventana */
+    max-width: none; /* Elimina el límite de ancho máximo */
+    /* Agrega un margen superior para separarlo del borde superior */
+    overflow: hidden; 
+    margin-left: 0%;
+}
+.caroiousel{
+    width: auto;
+    margin:0px 0px;
+}
+.imagenes {
+    display: flex;
+    transition: transform 0.5s ease;
+    height: 60vh; /* Ajusta esta altura según tus necesidades */
+}
+
+.imagenes img {
+    width: 100%;
+    height: 100%; /* Asegura que las imágenes llenen el contenedor */
+    object-fit: cover; /* Mantiene la proporción de las imágenes */
+    min-width: 100%;
+}
+
+.logo0 .img{
+    transition: all 0.3s;
+    cursor: pointer;
+  
+}
+.header .logo0 .img:hover {
+  transform: scale(1.7);
+}  
+
+/**/
+.services {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin: 20px 0;
+        }
+        .service {
+            position: relative;
+            margin: 10px;
+            width: 45%;
+            border-radius: 15px;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+        }
+        .service img {
+            width: 100%;
+            height: auto;
+            border-radius: 15px;
+        }
+        .service h3 {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: #fff;
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 10px;
+            margin: 0;
+            border-radius: 10px;
+        }
+        .service:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        /*carrusel*/
+        .carousel{
+    width: auto;
+    margin:0px 0px;
+}
+.carousel-list{
+    right: 5px;
+    position:relative;
+    display: flex;
+    align-items: center;
+    width: fit-content;
+    height: 304px;
+    width: 75%;
+    padding: 5% 0px;
+    margin: 0px auto;
+    max-width: 90vw;
+    overflow: hidden;
+    margin-top: 4%;
+	flex:1;
+    margin-left: 0%;
+}
+.carrusel-track{
+    position: relative;
+    top:0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    transition: .5s ease-in-out;
+}
+.carruseel{
+    position: relative;
+    width: 200%;
+    padding: 0px 1px;
+    float: left;
+    box-sizing: border-box;
+    display: flex;
+    height: 100%;
+
+}
+.carruseel h4{
+    position:absolute;
+    z-index: 1;
+    font-size: 22px;
+    line-height: 23px;
+    color: black;
+    padding: 15px;
+}
+.carruseel h4 small{
+    font-size: 15px;
+    display: block;
+
+}
+.carruseel a img{
+    object-fit: cover;
+    height: 300px;
+    width: 160px;
+    border-radius: 15px;
+    box-shadow: 0 2px 5px 0 rgba(0,0,0,.5);
+    transition: .3s ease-in-out;
+
+}
+@media(min-width:768px){
+    .carruseel{
+        width:275px;
+    }
+    .carruseel a img{
+        width:250px;
+    }
+}
+.carrusel-arrow {
+    border-radius: 30px; /* Bordes redondeados */
+    background-color: #ffffff; /* Color de fondo blanco */
+    position: absolute; /* Posiciona el botón de manera absoluta dentro de su contenedor */
+    z-index: 4; /* Asegura que el botón esté por encima de otros elementos */
+    width: 48px; /* Ancho del botón */
+    height: 48px; /* Alto del botón */
+    border: 0; /* Elimina el borde del botón */
+    cursor: pointer; /* Cambia el cursor a una mano al pasar sobre el botón */
+    align-items: center;
+    justify-content: center;
+    
+}
+
+/* Elimina el borde de enfoque predeterminado en el botón */
+.carrusel-arrow:focus {
+    outline: 0; /* Elimina el borde de enfoque */
+}
+
+/* Estilo para el SVG dentro del botón */
+.carrusel-arrow svg {
+    width: 12px; /* Ancho del SVG */
+    height: 12px; /* Alto del SVG igual al alto del botón */
+    fill: rgba(0, 0, 0, 0.7); /* Color del SVG (esto puede necesitar ajustes si usas fill en el SVG) */
+   
+}
+
+.carrusel-prev{
+    margin-right:10px;
+}
+.carrusel-next{
+	margin-top:-230px;
+	margin-left:62vw;
+	
+}
+@media (min-width: 768px){
+	.carousel{
+        margin:0px 60px;
+    }
+}
+.carousel h2{
+    font-size: 40px;
+    line-height: 38px;
+    padding-bottom: -20px;
+    opacity: .9;
+    text-transform: uppercase;
+    font-weight: 600;
+    text-align:center ;
+    color:white;
+    padding:1%;
+	margin-top: 50%;
+}
+
+@media (min-width:768px) and (max-width:1023px){
+	body{
+		font-size:16px;
+	}
+}
+@media (max-width: 767px){
+	body{
+		font-size:14px;
+	}
+}
+
+/**/
+.vdio {
+           
+            border-radius: 15px;
+            margin: 10px;
+        }
+        .video-container {
+            position: relative;
+            display: inline-block;
+            margin-bottom: 20px;
+        }
+.play-pause-button {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: rgba(0, 0, 0, 0.5);
+            border: none;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            color: white;
+            font-size: 18px;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        /**/
+        .h0  {
+            position: absolute;
+            top: 10%;
+            left: 30%;
+            transform: translate(-50%, -50%);
+            color: white;
+       
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 10px;
+            margin: 0;
+
+            border-radius: 10px;
+        }
+        .h0{
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="logo0">
+		<img class="img" src="IMAGEN/LOGO1.png" height="50">
+		</div>
+    <div class="logo">RENACIMIENTO DEL SALVADOR</div>
+    <div class="nav-links">
+        <div class="dropdown">
+            <span class="spam">Categorías</span>
+            <div class="dropdown-content">
+                <a href="#">Proyectos</a>
+                <a href="#">Experiencias</a>
+                <a href="#">Logros</a>
+                <a href="#">Experiencias del libro</a>
+            </div>
+        </div>
+        <input type="text" placeholder="Buscar...">
+        <button class="button">Contactos </button>
+        <button class="button">Sobre nosotros</button>
+    </div>
+</header>
+
+<div class="caroousel">
+    <div class="carrusel">
+        <div class="imagenes">
+            <img src="IMAGEN/NOVIAZGO.jpg" alt="Imagen 1">
+            <img src="IMAGEN/NIÑOO.jpg" alt="Imagen 2">
+            <img src="IMAGEN/TODOS3.jpg" alt="Imagen 3">
+			<img src="IMAGEN/TODOS.jpg" alt="Imagen 3">
+			
+        </div>
+    </div>
+</div>
+    <div class="sidebar">
+      <a href="#"><i class="fab fa-facebook"></i></a>
+      <a href="#"><i class="fab fa-instagram"></i></a>
+      <a href="#"><i class="fab fa-twitter"></i></a>
+      <a href="#"><i class="fab fa-linkedin"></i></a>
+    </div>
+
+<main class="main-content">
+    <section>
+        
+        <aside>
+            <div class="video-container">
+                <video autoplay muted loop class="vdio" id="video1">
+                    <source src="VIDEO/VIDEO1.mp4" type="video/mp4">
+                </video>
+                <button class="play-pause-button" onclick="togglePlayPause('video1', this)">▶️</button>
+            </div>
+        
+            <div class="video-container">
+                <video autoplay muted loop class="vdio" id="video2">
+                    <source src="VIDEO/VIDEO2.mp4" type="video/mp4">
+                </video>
+                <button class="play-pause-button" onclick="togglePlayPause('video2', this)">▶️</button>
+        </aside>
+    <p>Instituto Nacional Canton Lourdes</p>
+    <h1>Temas del libro Renacimiento de el salvador</h1>
+    <p class="author-info">Daniel Claros • 18 oct 2024 • Feria de Logros</p>
+    
+    <div class="services">
+        <div class="service">
+            <a href="file:///C:/Users/danny/Desktop/Feria%20de%20logr/Nueva%20carpeta%20(3)/Inteligentes%20y%20libres.html">
+            <img src="IMAGEN/img5.jpeg" alt="Live Events">
+            <h3>INTELIGENTES <br>
+                Y LIBRES</h3></a>
+        </div>
+        <div class="service">
+        <a href="file:///C:/Users/danny/Desktop/Feria%20de%20logr/Nueva%20carpeta%20(3)/historia%20del%20ser%20humano.html">
+            <img src="IMAGEN/img2.jpeg" alt="Private Coaching">
+            <h3>IGUALES  Y 
+                <BR>DISTINTOS
+            </h3>
+        </a>
+        </div>
+        <div class="service">
+            <img src="IMAGEN/img4.jpeg"  alt="Exclusive Retreats">
+            <h3>FUERTES Y FELICES</h3>
+        </div>
+        <div class="service">
+            <img src="IMAGEN/img3.jpeg" alt="Workshops">
+            <h3>CAPACES DE AMAR</h3>
+        </div>
+    </div>
+    <div class="carousel">
+        
+        <div class="carousel-list" id="-licarruselst">
+            <button class="carrusel-arrow carrusel-prev" id="button-prev" data-buttom="buttom-prev"
+                onclick="app.processingButtom(event)">
+                <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-left"
+                    class="svg-inline--fa fa-chevron-left fa-w-10" role="img" xmlns="https://www.w3.org/2000/svg"
+                    viewBox="0 0 320 512">
+                    <path fill="currentColor"
+                        d="M34.52 239.03L228.87 44.69c9.37-9.37 24.57-9.37 33.94 0l22.67 22.67c9.36 9.36 9.37 24.52.04 33.9L131.49 256l154.02 154.75c9.34 9.38 9.32 24.54-.04 33.9l-22.67 22.67c-9.37 9.37-24.57 9.37-33.94 0L34.52 272.97c-9.37-9.37-9.37-24.57 0-33.94z">
+                    </path>
+                </svg>
+            </button>
+            <div class="carrusel-track" id="track">
+                <div class="carruseel">
+                    <div>
+                        <a href="RENACIMIENTO DE EL SALVADOR.html" class="load-link">
+                        <div id="loader" class="loader" style="display: none;">
+<div class="spinner"></div>
+<p>Cargando...</p>
+</div> 
+                            
+                            <h4 class="h0"><small>Experiencias</small></h4>
+                            <picture>
+                                <img src="IMAGEN/viaje2.jpg" alt="IMAGEN">
+                            </picture>
+                        </a>
+                    </div>
+                </div>
+                <div class="carruseel">
+                    <div>
+                        <a href="https://66ce57ac54a43ea2c810bee9--delicate-maamoul-175ec2.netlify.app/">
+                            
+                            <h4 class="h0"><small >Proyectos</small></h4>
+                            <picture>
+                                <img src="IMAGEN/ajedrez.jpg" height="100" width="100" alt="IMAGEN">
+                            </picture>
+                        </a>
+                    </div>
+                </div>
+                <div class="carruseel">
+                    <div>
+                        <a href="/">
+                            <h4 class="h0"><small>Logros</small></h4>
+                            <picture>
+                                <img src="IMAGEN/BAR.jpg" alt="IMAGEN">
+                            </picture>
+                        </a>
+                    </div>
+                </div>
+                <div class="carruseel">
+                    <div>
+                        <a href="/">
+                            <h4 class="h0"><small>Experiencias del libro</small></h4>
+                            <picture>
+                                <img src="IMAGEN/BAR.jpg" alt="IMAGEN">
+                            </picture>
+                        </a>
+                    </div>
+                </div>
+                <div class="carruseel">
+                    <div>
+                        <a href="/">
+                            <h4 class="h0"><small>Sobre Nosotros</small></h4>
+                            <picture>
+                                <img src="IMAGEN/BAR.jpg" alt="IMAGEN">
+                            </picture>
+                        </a>
+                    </div>
+                </div>
+                <div class="carruseel">
+                    <div>
+                        <a href="/">
+                            <h4 class="h0"><small>Imagen</small></h4>
+                            <picture>
+                                <img src="IMAGEN/BAR.jpg" alt="IMAGEN">
+                            </picture>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <button class="carrusel-arrow carrusel-next" id="button-next" data-buttom="buttom-next"
+        onclick="app.processingButtom(event) ">
+        <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-right"
+            class="svg-inline--fa fa-chevron-right fa-w-10" role="img" xmlns="https://www.w3.org/2000/svg"
+            viewBox="0 0 320 512">
+            <path fill="currentColor"
+                d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z">
+            </path>
+        </svg>
+    </button>
+
+
+</main>
+<footer class="footer">
+    <div class="containerr3">
+      <div class="footer-row">
+        <div class="footer-links">
+          <h4>Compañia</h4>
+          <ul>
+            <li><a href="#">Nosotors</a></li>
+            <li><a href="#">Nuestors servicios </a></li>
+            <li><a href="#">Politica de privacidad</a></li>
+            <li><a href="#">afiliate</a></li>
+          </ul>
+        </div>
+        <div class="footer-links">
+          <h4>Ayuda</h4>
+          <ul>
+            <li><a href="#">Preguntas</a></li>
+            <li><a href="#">Compras</a></li>
+            <li><a href="#">Envios</a></li>
+            <li><a href="#">Pago</a></li>
+          </ul>
+        </div>
+        <div class="footer-links">
+          <h4>Nuestros productos</h4>
+          <ul>
+            <li><a href="#">APPs</a></li>
+            <li><a href="#">Software</a></li>
+            <li><a href="#">Hadware</a></li>
+            <li><a href="#">Security</a></li>
+          </ul>
+        </div>
+    
+      </div>
+    </div>
+  </footer>
+  <script src="CSS/scripts.js"></script>
+</body>
+</html>
